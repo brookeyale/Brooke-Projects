@@ -35,7 +35,7 @@ public class StudentSolver {
             }
         }
         sol.add(maxPair); //adding the max integer and pair for best solution
-        hm = available(hm, maxPair); //a hashmap of all board pairs except for corners, and the max pair
+        available(hm, maxPair); //a hashmap of all board pairs except for corners, and the max pair
         int iter = 0;
 
         //START HERE FUTURE BROOKE
@@ -48,15 +48,10 @@ public class StudentSolver {
             if (sp.size() > 0){
                 for (Pair<Integer, Integer> integerIntegerPair : sp) {
                     sol.add(integerIntegerPair);
-                    mod = available(hm, integerIntegerPair); //hashmapVariable.get(x) fetches the value mapped in a particular key
                 }
-            } else {
-                sol.add(maxPair);
-                mod = available(hm, maxPair);
-            }
+            } else sol.add(maxPair);
             iter += 1;
-            hm = mod;
-            }
+        }
         for (int m = 0; m < board.length; m++){
             for (int n = 0; n  < board[m].length; n++) {
                 hm.put(new Pair<>(m,n), board[m][n]);
@@ -158,6 +153,32 @@ public class StudentSolver {
         return hm;
     }
     public static void main(String[] args){
+        /*int[][] board = new int[4][6];
+        board[0][0] = 35;
+        board[0][1] = 90;
+        board[0][2] = 54;
+        board[0][3] = 62;
+        board[0][4] = 62;
+        board[0][5] = 69;
+        board[1][0] = 89;
+        board[1][1] = 17;
+        board[1][2] = 59;
+        board[1][3] = 13;
+        board[1][4] = 76;
+        board[1][5] = 24;
+        board[2][0] = 73;
+        board[2][1] = 1;
+        board[2][2] = 57;
+        board[2][3] = 11;
+        board[2][4] = 60;
+        board[2][5] = 34;
+        board[3][0] = 52;
+        board[3][1] = 94;
+        board[3][2] = 21;
+        board[3][3] = 67;
+        board[3][4] = 9;
+        board[3][5] = 77;*/
+
         int[][]board = new int[7][100];
         Random rand = new Random();
         for(int m = 0; m < board.length; m++){
@@ -167,5 +188,7 @@ public class StudentSolver {
         }
         ArrayList<Pair<Integer,Integer>> sol = solve(board);
         System.out.println(sol);
+        System.out.println("Meg used="+(Runtime.getRuntime().totalMemory()-
+                Runtime.getRuntime().freeMemory())/(1000*1000)+"M");
     }
 }
