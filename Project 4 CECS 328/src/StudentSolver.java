@@ -6,7 +6,7 @@ public class StudentSolver {
     // This will allow other functions within StudentSolver to access the private variable faster.
     // Can check with the timer function
 
-    private static Pair[] corners = new Pair[4]; //new array to hold corner positions
+    private static final Pair[] corners = new Pair[4]; //new array to hold corner positions
 
     public static ArrayList<Pair<Integer,Integer>> solve(int[][] board){
         bored = board;
@@ -19,7 +19,6 @@ public class StudentSolver {
         corners[3] = new Pair<>(bored.length - 1, 0);
 
         ArrayList<Pair<Integer,Integer>> sol = new ArrayList<>(); //best solution
-        ArrayList<Integer> solInts = new ArrayList<>(); //an arraylist of the addends in the best solution
         HashMap<Pair<Integer, Integer>, Integer> hm = new HashMap<>(); //Integer key, Pair value
 
         //looking for the highest integer in the board
@@ -35,7 +34,7 @@ public class StudentSolver {
                 }
             }
         }
-        solInts.add(max);    sol.add(maxPair); //adding the max integer and pair for best solution
+        sol.add(maxPair); //adding the max integer and pair for best solution
         hm = available(hm, maxPair); //a hashmap of all board pairs except for corners, and the max pair
         int iter = 0;
 
@@ -47,13 +46,11 @@ public class StudentSolver {
             ArrayList<Pair<Integer, Integer>> sp = surroundingPoints(maxPair, hm);
             HashMap<Pair<Integer,Integer>, Integer> mod = new HashMap<>(); //mod is the hashmap after pairs are selected for sp and removed from hm
             if (sp.size() > 0){
-                for(int i = 0; i < sp.size(); i ++){
-                    solInts.add(hm.get(sp.get(i))); //doesn't this always add the full size of sp with the values?
-                    sol.add(sp.get(i));
-                    mod = available(hm, sp.get(i)); //hashmapVariable.get(x) fetches the value mapped in a particular key
+                for (Pair<Integer, Integer> integerIntegerPair : sp) {
+                    sol.add(integerIntegerPair);
+                    mod = available(hm, integerIntegerPair); //hashmapVariable.get(x) fetches the value mapped in a particular key
                 }
             } else {
-                solInts.add(hm.get(maxPair));
                 sol.add(maxPair);
                 mod = available(hm, maxPair);
             }
