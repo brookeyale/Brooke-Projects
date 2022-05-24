@@ -5,7 +5,7 @@
       <element id="javaee-facet-resources" facet="Project 4 CECS 328/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="Project 4 CECS 328" />
+          <element id="module-output" name="Alien Chess" />
         </element>
       </element>
     </root>

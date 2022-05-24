@@ -48,6 +48,7 @@ public class StudentSolver {
             if (sp.size() > 0){
                 for (Pair<Integer, Integer> integerIntegerPair : sp) {
                     sol.add(integerIntegerPair);
+                    mod = available(hm, integerIntegerPair); //hashmapVariable.get(x) fetches the value mapped in a particular key
                 }
             } else sol.add(maxPair);
             iter += 1;
@@ -90,48 +91,42 @@ public class StudentSolver {
         int sum = 0;
         int testSum = 0;
         if (pair.first.equals(0) || pair.first.equals(bored.length - 1) || pair.second.equals(0) || pair.second.equals(bored[0].length - 1) ){
-        if (hm.containsKey(new Pair<>(pair.first - 1, pair.second)) && pair.first - 1 >= 0) {
-            spAL.add(new Pair<>(pair.first - 1, pair.second));
-            sum += hm.get(new Pair<>(pair.first - 1, pair.second)); }
-        if (hm.containsKey(new Pair<>(pair.first, pair.second - 1)) && pair.second - 1 >= 0) {
-            spAL.add(new Pair<>(pair.first, pair.second - 1));
-            sum += hm.get(new Pair<>(pair.first, pair.second - 1)); }
-        if (hm.containsKey(new Pair<>(pair.first + 1, pair.second)) && pair.first < bored.length - 1) {
-            spAL.add(new Pair<>(pair.first + 1, pair.second));
-            sum += hm.get(new Pair<>(pair.first + 1, pair.second)); }
-        if (hm.containsKey(new Pair<>(pair.first, pair.second + 1)) && pair.second < bored[0].length - 1){
-            spAL.add(new Pair<>(pair.first, pair.second + 1));
-            sum += hm.get(new Pair<>(pair.first, pair.second + 1)); }
+            if (hm.containsKey(new Pair<>(pair.first - 1, pair.second)) && pair.first - 1 >= 0) {
+                spAL.add(new Pair<>(pair.first - 1, pair.second));
+                sum += hm.get(new Pair<>(pair.first - 1, pair.second)); }
+            if (hm.containsKey(new Pair<>(pair.first, pair.second - 1)) && pair.second - 1 >= 0) {
+                spAL.add(new Pair<>(pair.first, pair.second - 1));
+                sum += hm.get(new Pair<>(pair.first, pair.second - 1)); }
+            if (hm.containsKey(new Pair<>(pair.first + 1, pair.second)) && pair.first < bored.length - 1) {
+                spAL.add(new Pair<>(pair.first + 1, pair.second));
+                sum += hm.get(new Pair<>(pair.first + 1, pair.second)); }
+            if (hm.containsKey(new Pair<>(pair.first, pair.second + 1)) && pair.second < bored[0].length - 1){
+                spAL.add(new Pair<>(pair.first, pair.second + 1));
+                sum += hm.get(new Pair<>(pair.first, pair.second + 1)); }
 
-        //For test comparison. This checks whether the selected surrounding pairs are the best option compared to the corner values
-        test.add(pair);
-        testSum += hm.get(pair);
-        if (hm.containsKey(new Pair<>(pair.first - 1, pair.second - 1)) && pair.first - 1 >= 0 && pair.second - 1 >= 0){
-            test.add(new Pair<>(pair.first - 1, pair.second - 1));
-            testSum += hm.get(new Pair<>(pair.first - 1, pair.second - 1));
-        }
-        if (hm.containsKey(new Pair<>(pair.first - 1, pair.second + 1)) && pair.first - 1 >= 0 && pair.second < bored[0].length - 1){
+            //For test comparison. This checks whether the selected surrounding pairs are the best option compared to the corner values
+            test.add(pair);
+            testSum += hm.get(pair);
+            if (hm.containsKey(new Pair<>(pair.first - 1, pair.second - 1)) && pair.first - 1 >= 0 && pair.second - 1 >= 0){
+                test.add(new Pair<>(pair.first - 1, pair.second - 1));
+                testSum += hm.get(new Pair<>(pair.first - 1, pair.second - 1));
+            }
+            if (hm.containsKey(new Pair<>(pair.first - 1, pair.second + 1)) && pair.first - 1 >= 0 && pair.second < bored[0].length - 1){
                 test.add(new Pair<>(pair.first - 1, pair.second + 1));
                 testSum += hm.get(new Pair<>(pair.first - 1, pair.second + 1));
-        }
-        if (hm.containsKey(new Pair<>(pair.first + 1, pair.second + 1)) && pair.first < bored.length - 1 && pair.second < bored[0].length - 1){
+            }
+            if (hm.containsKey(new Pair<>(pair.first + 1, pair.second + 1)) && pair.first < bored.length - 1 && pair.second < bored[0].length - 1){
                 test.add(new Pair<>(pair.first + 1, pair.second + 1));
                 testSum += hm.get(new Pair<>(pair.first + 1, pair.second + 1));
-        }
-        if (hm.containsKey(new Pair<>(pair.first + 1, pair.second - 1)) && pair.first < bored.length - 1 && pair.second - 1 >= 0){
+            }
+            if (hm.containsKey(new Pair<>(pair.first + 1, pair.second - 1)) && pair.first < bored.length - 1 && pair.second - 1 >= 0){
                 test.add(new Pair<>(pair.first + 1, pair.second - 1));
                 testSum += hm.get(new Pair<>(pair.first + 1, pair.second - 1));
+            }
+            if ((sum > hm.get(pair) && isCorner) || (sum > testSum && !isCorner)) return spAL;
+            else return test;
         }
-        if (sum > hm.get(pair) && isCorner){
-                return spAL;
-        }
-        else if (sum > testSum && !isCorner) {
-            return spAL;
-        }
-        else return test;}
-
         return new ArrayList<>();
-
     }
     public static HashMap<Pair<Integer, Integer>, Integer> available(HashMap<Pair<Integer,Integer>, Integer> hm, Pair<Integer, Integer> pair){
         //updates which pair values are still available based on their board position
@@ -147,13 +142,30 @@ public class StudentSolver {
             bored[pair.first+1][pair.second] = 0;}
         if (hm.containsKey(new Pair<>(pair.first, pair.second + 1)) && pair.second < bored[0].length - 1){
             hm.remove(new Pair<>(pair.first, pair.second + 1));
-            bored[pair.first][pair.second +1] = 0;}
+            bored[pair.first][pair.second + 1] = 0;}
+
+        /* if (hm.containsKey(new Pair<>(pair.first - 1, pair.second - 1)) && pair.first - 1 >= 0 && pair.second - 1 >= 0){
+            hm.remove(new Pair<>(pair.first - 1, pair.second - 1));
+            bored[pair.first - 1][pair.second - 1] = 0;
+        }
+        if (hm.containsKey(new Pair<>(pair.first - 1, pair.second + 1)) && pair.first - 1 >= 0 && pair.second < bored[0].length - 1){
+            hm.remove(new Pair<>(pair.first - 1, pair.second + 1));
+            bored[pair.first - 1][pair.second + 1] = 0;
+        }
+        if (hm.containsKey(new Pair<>(pair.first + 1, pair.second + 1)) && pair.first < bored.length - 1 && pair.second < bored[0].length - 1){
+            hm.remove(new Pair<>(pair.first + 1, pair.second + 1));
+            bored[pair.first + 1][pair.second + 1] = 0;
+        }
+        if (hm.containsKey(new Pair<>(pair.first + 1, pair.second - 1)) && pair.first < bored.length - 1 && pair.second - 1 >= 0){
+            hm.remove(new Pair<>(pair.first + 1, pair.second - 1));
+            bored[pair.first + 1][pair.second - 1] = 0;
+        } */
         hm.remove(pair);
         bored[pair.first][pair.second]=0;
         return hm;
     }
     public static void main(String[] args){
-        /*int[][] board = new int[4][6];
+        int[][] board = new int[4][6];
         board[0][0] = 35;
         board[0][1] = 90;
         board[0][2] = 54;
@@ -177,15 +189,15 @@ public class StudentSolver {
         board[3][2] = 21;
         board[3][3] = 67;
         board[3][4] = 9;
-        board[3][5] = 77;*/
-
+        board[3][5] = 77;
+        /*
         int[][]board = new int[7][100];
         Random rand = new Random();
         for(int m = 0; m < board.length; m++){
             for(int n = 0; n  < board[m].length; n++) {
                 board[m][n] = rand.nextInt(100) + 1;
             }
-        }
+        }*/
         ArrayList<Pair<Integer,Integer>> sol = solve(board);
         System.out.println(sol);
         System.out.println("Meg used="+(Runtime.getRuntime().totalMemory()-

@@ -5,28 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="171f24a6-3b3f-4784-9256-c4ac2db041e3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/web_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 4 CECS 328.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project 4 CECS 328/Example" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project 4 CECS 328/Pair.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project 4 CECS 328/StudentSolver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Example" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pair.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StudentSolver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Outfit-Selector/Outfit-Selector/src/Closet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Outfit-Selector/Outfit-Selector/src/Clothes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/.idea/artifacts/web_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/.idea/copyright/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/.idea/scopes/scope_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Project 4 CECS 328/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/Project 4 CECS 328.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/out/production/Project 4 CECS 328/Example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/out/production/Project 4 CECS 328/Pair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/out/production/Project 4 CECS 328/StudentSolver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/src/Example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/src/Pair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/src/StudentSolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 4 CECS 328/web/index.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +47,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/StudentSolver.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -66,30 +71,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/by_51/OneDrive/Documents/Brooke-Projects/Alien Chess"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/by_51/OneDrive/Documents/Brooke-Projects/Alien Chess&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="StudentSolver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="StudentSolver" />
       <module name="Alien Chess" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Alien Chess" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Alien Chess" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
