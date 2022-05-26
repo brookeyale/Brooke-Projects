@@ -5,8 +5,7 @@ public abstract class Clothes {
     public void setName(String newName) {name = newName;}
     public void setClothingType(String newClothingType) {clothingType = newClothingType;}
     abstract void makeClothing();
-
-
+    @Override
     public String toString(){
         return name + "is/ are your " + clothingType + "for the day.";
     }
