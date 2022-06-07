@@ -1,6 +1,6 @@
 Planning
 
-A) Sudoku Grid is an int[9][9] Array. Need to mark all empty values as null and need to marked filled values as unavailable. Maybe a boolean isAvailable array for true = available and false = occupied
-B) find(NUMBER) will search for all locations of a number and return an arraylist of grid spots that contains the number.
+A) COMPLETE Sudoku Grid is an int[9][9] Array. Need to mark all empty values as null and need to marked filled values as unavailable. Maybe a boolean isAvailable array for true = available and false = occupied
+B) MODIFIED (see D) find(NUMBER) will search for all locations of a number and return an arraylist of grid spots that contains the number.
 C) check(GRID SPOT) will search the spot to see if isAvailable(GRID SPOT) crosses with any values from the arraylist returned from find(NUMBER)
-D) A,B, and C are semi brute force until I figure out what the fuck I'm doing.
+D) Class that holds the locations of the numbers (ie grid points)

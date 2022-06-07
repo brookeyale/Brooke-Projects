@@ -1,6 +1,7 @@
 Day to Day Documentation
-5/8: Created sudokuSolver.java, created first test case, created int[][] for puzzle to work with, created an ArrayList for available elements
-6/6: Created better file set up and sudoku-solver branch to modify changes, planning new methods
+5/8: Created sudokuSolver.java, created first test case, created int[][] for grid to work with, created an ArrayList for available elements
+6/6: Created better file set up and sudoku-solver branch to modify changes, planning new methods (A - C)
+6/7: Created fillAvail(int[][]), which fills boolean[][] with true if a grid spot is avail and false if not, created class NumberLocation as a HashMap to hold the grid points of certain numbers
 
 
 
