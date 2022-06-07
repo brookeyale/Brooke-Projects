@@ -4,3 +4,4 @@ A) COMPLETE Sudoku Grid is an int[9][9] Array. Need to mark all empty values as 
 B) MODIFIED (see D) find(NUMBER) will search for all locations of a number and return an arraylist of grid spots that contains the number.
 C) check(GRID SPOT) will search the spot to see if isAvailable(GRID SPOT) crosses with any values from the arraylist returned from find(NUMBER)
 D) Class that holds the locations of the numbers (ie grid points)
+E) availLocation needs a better data structure, will try a stack.

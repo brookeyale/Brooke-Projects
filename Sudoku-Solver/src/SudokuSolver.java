@@ -3,6 +3,7 @@ import java.io.*;
 
 public class SudokuSolver {
     private static boolean[][] avail = new boolean[9][9];
+    private static HashMap<Integer, Integer> availLocation = new HashMap<>();
     private static int[][] grid = new int[9][9];
     private static NumberLocation ones = new NumberLocation(1);
     private static NumberLocation twos = new NumberLocation(2);
@@ -21,6 +22,9 @@ public class SudokuSolver {
     public static boolean[][] getAvail(){
         return avail;
     }
+    public static HashMap<Integer, Integer> getAvailLocation(){
+        return availLocation;
+    }
     public static void fillAvail(){
         //marks grid elements as true if te value is null and false if there is a number
         //will also search for all locations of a number and return an arraylist of grid spots that contains the number.
@@ -28,7 +32,10 @@ public class SudokuSolver {
         int iter = 0;
         for (int[] rows : grid){
             for (int value : rows){
-                if (value == 0) avail[iter / 9][iter % 9] = true;
+                if (value == 0) {
+                    avail[iter / 9][iter % 9] = true;
+                    availLocation.put(iter/9, iter%9);
+                }
                 else avail[iter/9][iter%9] = false;
                 System.out.println(avail[iter/9][iter%9]);
                 iter++;
