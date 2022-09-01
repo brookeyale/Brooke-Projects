@@ -1,0 +1,13 @@
+Planning
+
+A) COMPLETE Sudoku Grid is an int[9][9] Array. Need to mark all empty values as null and need to marked filled values as unavailable. Maybe a boolean isAvailable array for true = available and false = occupied
+B) MODIFIED (see D) find(NUMBER) will search for all locations of a number and return an arraylist of grid spots that contains the number.
+C) check(GRID SPOT) will search the spot to see if isAvailable(GRID SPOT) crosses with any values from the arraylist returned from find(NUMBER)
+D) Class that holds the locations of the numbers (ie grid points)
+E) availLocation needs a better data structure, will try a stack.
+F) enum for each square
+G) Make function to parse through grids that are not in squares
+H) BEFORE NEXT TIME:::::::
+ -----> Read 7/20 of Day-to-Day-Doc, then follow the directions.
+ -----> Make a UML diagram for Classes
+ -----> Make a code flow chart because i'm lost
